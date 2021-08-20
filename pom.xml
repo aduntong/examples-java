@@ -31,8 +31,9 @@ under the License.
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<flink.version>1.7.1</flink.version>
+		<flink.version>1.13.1</flink.version>
 		<java.version>1.8</java.version>
+<!--		<scala.binary.version>2.12</scala.binary.version>-->
 		<scala.binary.version>2.12</scala.binary.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -63,16 +64,39 @@ under the License.
                 </dependency>
 
 		<!-- queryable-state dependencies are needed for respective examples -->
-                <dependency>
-                        <groupId>org.apache.flink</groupId>
-                        <artifactId>flink-queryable-state-runtime_${scala.binary.version}</artifactId>
-                        <version>${flink.version}</version>
-                </dependency>
-                <dependency>
-                        <groupId>org.apache.flink</groupId>
-                        <artifactId>flink-queryable-state-client-java_${scala.binary.version}</artifactId>
-                        <version>${flink.version}</version>
-                </dependency>
+<!--                <dependency>-->
+<!--                        <groupId>org.apache.flink</groupId>-->
+<!--                        <artifactId>flink-queryable-state-runtime_${scala.binary.version}</artifactId>-->
+<!--                        <version>${flink.version}</version>-->
+<!--                </dependency>-->
+<!--                <dependency>-->
+<!--                        <groupId>org.apache.flink</groupId>-->
+<!--                        <artifactId>flink-queryable-state-client-java_${scala.binary.version}</artifactId>-->
+<!--                        <version>${flink.version}</version>-->
+<!--                </dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.flink</groupId>-->
+<!--			<artifactId>flink-queryable-state-runtime</artifactId>-->
+<!--			<version>${flink.version}</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-queryable-state-runtime -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-queryable-state-runtime_${scala.binary.version}</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.apache.flink</groupId>-->
+<!--			<artifactId>flink-queryable-state-client-java</artifactId>-->
+<!--			<version>${flink.version}</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-queryable-state-client-java -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-queryable-state-client-java</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
 
 		<!--
                 Derby is used for a sink connector example.
